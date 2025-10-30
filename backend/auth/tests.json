@@ -1,0 +1,35 @@
+{
+  "tests": [
+    {
+      "name": "Register validation",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "register",
+        "username": "",
+        "email": "test@example.com",
+        "password": "testpass123"
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Login with wrong credentials",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "login",
+        "username": "wronguser",
+        "password": "wrongpass"
+      },
+      "expectedStatus": 401,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

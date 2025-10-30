@@ -1,0 +1,25 @@
+{
+  "tests": [
+    {
+      "name": "Get all posts",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Create new post",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "create",
+        "user_id": 1,
+        "content": "Test post content"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "message": "Post created"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
